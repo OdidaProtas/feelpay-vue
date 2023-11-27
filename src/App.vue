@@ -9,7 +9,7 @@
         />
       </div>
       <h1 class="text-center text-4xl font-bold">
-        FeelPay Angular Integration
+        FeelPay Vue Integration
       </h1>
       <p class="text-center text-3xl mt-3">
         An example of FeelPay integration into an Angular Placeholder
