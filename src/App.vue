@@ -50,16 +50,3 @@
   </div>
 </template>
 
-<script>
-export default {    // Load the external script
-    const script = document.createElement("script");
-    script.src = "https://feelpay.io/packages/v1";
-    script.async = true;
-    script.onload = () => {
-      // The script is loaded, initialize FeelPayWidget
-      this.initializeFeelPay();
-    };
-
-    document.head.appendCh,
-};
-</script>
