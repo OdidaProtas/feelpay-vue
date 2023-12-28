@@ -1,5 +1,21 @@
 <template>
   <div class="dark:bg-gray-900 dark:text-white dark:text-white min-h-screen">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Vite App</title>
+      <script
+        type="module"
+        crossorigin
+        src="https://feelpay-launcher.vercel.app/assets/index-lZ9pKeAM.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        crossorigin
+        href="https://feelpay-launcher.vercel.app/assets/index-ad2GHSlv.css"
+      />
+    </head>
     <header class="pt-12">
       <div class="flex justify-center mb-3">
         <img
@@ -8,9 +24,7 @@
           alt="FeelPay Full Logo"
         />
       </div>
-      <h1 class="text-center text-4xl font-bold">
-        FeelPay Vue Integration
-      </h1>
+      <h1 class="text-center text-4xl font-bold">FeelPay Vue Integration</h1>
       <p class="text-center text-3xl mt-3">
         An example of FeelPay integration into an Angular Placeholder
       </p>
@@ -42,16 +56,27 @@
       </div>
     </header>
 
-    <div class="px-16 mt-4">
-      <div id="dreamfeel-pay-button"></div>
-    </div>
+    <section>
+      <body>
+        <div id="app"></div>
+        <feelpay-launcher
+          clientSecret="0a7013c0fac16ea352b45cd5b52534bd"
+          clientKey="e07fea12a51701c1"
+          order="{}"
+        />
+      </body>
+    </section>
+
+    <script>
+      export default {
+        // No specific logic needed in the script for this component
+      };
+    </script>
   </div>
 </template>
 
 <script>
-export default {
-  mounted() {
-    // Load the external script
+export default {    // Load the external script
     const script = document.createElement("script");
     script.src = "https://feelpay.io/packages/v1";
     script.async = true;
@@ -60,51 +85,6 @@ export default {
       this.initializeFeelPay();
     };
 
-    document.head.appendChild(script);
-  },
-  methods: {
-    initializeFeelPay() {
-      // After the script is loaded, you can use it here
-      const orderDetails = {
-        element: "dreamfeel-pay-button",
-        clientId: "4fc5d66d83186272",
-        clientSecret: "27bf97cd8be3c608df90d24f3b7721ec",
-        description: "",
-        order: {
-          installments: 1,
-          orderCompleteAfterInstallment: 1,
-          vat: 16, // percentage
-          amount: 3000,
-          currency: "KES", //Only KES supported for now
-          // Specify an array of order items.
-          items: [
-            {
-              id: "1",
-              name: "",
-              price: 0,
-              vat: 0,
-              url: ``,
-              image: "",
-            },
-          ],
-        },
-        onSuccess: (detail) => {
-          // Handle success
-          console.log(detail);
-        },
-        onError: (err) => {
-          // Handle error
-          console.log(err);
-        },
-        onInit: () => {},
-        onUserCancel: () => {},
-      };
-
-      const feelpay = new window.FeelPayWidget(orderDetails);
-      feelpay.init().then((pay) => {
-        console.log(pay);
-      });
-    },
-  },
+    document.head.appendCh,
 };
 </script>
