@@ -1,21 +1,5 @@
 <template>
   <div class="dark:bg-gray-900 dark:text-white dark:text-white min-h-screen">
-    <head>
-      <meta charset="UTF-8" />
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Vite App</title>
-      <script
-        type="module"
-        crossorigin
-        src="https://feelpay-launcher.vercel.app/assets/index-lZ9pKeAM.js"
-      ></script>
-      <link
-        rel="stylesheet"
-        crossorigin
-        href="https://feelpay-launcher.vercel.app/assets/index-ad2GHSlv.css"
-      />
-    </head>
     <header class="pt-12">
       <div class="flex justify-center mb-3">
         <img
@@ -57,21 +41,12 @@
     </header>
 
     <section>
-      <body>
-        <div id="app"></div>
-        <feelpay-launcher
-          clientSecret="0a7013c0fac16ea352b45cd5b52534bd"
-          clientKey="e07fea12a51701c1"
-          order="{}"
-        />
-      </body>
+      <feelpay-launcher
+        clientSecret="0a7013c0fac16ea352b45cd5b52534bd"
+        clientKey="e07fea12a51701c1"
+        order="{}"
+      />
     </section>
-
-    <script>
-      export default {
-        // No specific logic needed in the script for this component
-      };
-    </script>
   </div>
 </template>
 
